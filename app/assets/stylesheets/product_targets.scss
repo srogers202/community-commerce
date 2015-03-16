@@ -1,0 +1,55 @@
+.product-targets-container {
+    
+    .product-display {
+        padding: 15px;
+        background-color: #F2F2FF;
+        border-radius: 5px;
+        box-shadow: 7px 7px 4px #D5D5D4;
+
+        .product-title {
+            font-size: 1.2em;
+        }
+
+        .product-element {
+            padding: 5px 0;
+
+            .descr {
+                margin-right: 5px;
+            }
+
+            .value {
+                font-weight: bold;
+            }
+        }
+
+        .product-expiration-title {
+            margin: 5px 0;
+            padding: 5px 0;
+            font-size: 1.2em;
+        }
+    }
+
+    .product-targets-table {
+        width: 100%;
+        box-shadow: 7px 7px 4px #D5D5D4;
+        
+        tr {
+
+            th {
+                background-color: gray;
+                color: white;
+                text-align: left;
+                padding: 10px;
+                border: 1px solid white;
+            }
+
+            td {
+                text-align: left;
+                padding: 10px;
+                border-bottom: 1px solid black;
+                border-left: 1px solid black;
+                border-right: 1px solid black;   
+            }
+        }
+    }
+}

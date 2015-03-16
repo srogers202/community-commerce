@@ -1,0 +1,95 @@
+<div class="product-targets-container container-fluid">
+
+  <h1>Sales Targets</h1>
+
+  <div class="row">
+    <div class="product-display span4">
+
+      <!-- product title -->
+      <div class="product-title product-element">
+        <%= @product.title %>
+      </div>
+
+      <!-- product current price -->
+      <div class="product-current-price product-element">
+        <span class="descr">Current Price:</span>
+        <span class="value">$<%= @product.variants[0].price %></span>
+      </div>
+
+      <!-- Total Purchased -->
+      <div class="product-total-purchased product-element">
+        <span class="descr">Sold:</span>
+        <span class="value"><%= @purchased_count %></span>
+      </div>
+
+      <!-- Total Orders -->
+      <div class="product-total-orders product-element">
+        <span class="descr">Orders:</span>
+        <span class="value"><%= @orders.length %></span>
+      </div>
+
+      <div class="product-expiration-title">Product Expiration (UTC time)</div>
+
+      <div>
+        <%= form_for(@product_expiration) do |f| %>
+          <% if @product_expiration.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@product_expiration.errors.count, "error") %> prohibited this product_expiration from being saved:</h2>
+
+              <ul>
+              <% @product_expiration.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.datetime_field :expiration %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="span6 offset1">
+      <table class="product-targets-table">
+        <thead>
+          <tr>
+            <th>Order</th>
+            <th>Quantity Target</th>
+            <th>Price</th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @product_targets.each do |product_target| %>
+            <tr>
+              <td><%= product_target.order %></td>
+              <td><%= product_target.minqty %></td>
+              <td>$<%= product_target.price %></td>
+              <td>
+                <span><%= link_to 'Edit', edit_product_target_path(product_target) %></span>
+                <span><%= link_to 'Remove', product_target, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <%= link_to 'New Product target', new_product_target_path(:next_order => @next_order) %>
+      <br />
+      <br />
+
+      <%= link_to 'Manually process refunds', :action => 'process_refunds' %>
+
+    </div>
+  </div>
+
+</div>

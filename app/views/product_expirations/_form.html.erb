@@ -1,0 +1,33 @@
+<%= form_for(@product_expiration) do |f| %>
+  <% if @product_expiration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product_expiration.errors.count, "error") %> prohibited this product_expiration from being saved:</h2>
+
+      <ul>
+      <% @product_expiration.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :shop %><br>
+    <%= f.number_field :shop %>
+  </div>
+  <div class="field">
+    <%= f.label :product %><br>
+    <%= f.number_field :product %>
+  </div>
+  <div class="field">
+    <%= f.label :expiration %><br>
+    <%= f.datetime_select :expiration %>
+  </div>
+  <div class="field">
+    <%= f.label :complete %><br>
+    <%= f.check_box :complete %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

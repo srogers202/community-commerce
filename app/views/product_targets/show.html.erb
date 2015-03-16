@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @product_target.product %>
+</p>
+
+<p>
+  <strong>Minqty:</strong>
+  <%= @product_target.minqty %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product_target.price %>
+</p>
+
+<p>
+  <strong>Pricelessprevious:</strong>
+  <%= @product_target.priceLessPrevious %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @product_target.order %>
+</p>
+
+<%= link_to 'Edit', edit_product_target_path(@product_target) %> |
+<%= link_to 'Back', product_targets_path %>

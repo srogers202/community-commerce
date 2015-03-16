@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Shop:</strong>
+  <%= @product_expiration.shop %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @product_expiration.product %>
+</p>
+
+<p>
+  <strong>Expiration:</strong>
+  <%= @product_expiration.expiration %>
+</p>
+
+<p>
+  <strong>Complete:</strong>
+  <%= @product_expiration.complete %>
+</p>
+
+<%= link_to raw('Back'), "/product_targets?product_id=" + @product_expiration.product.to_s %>

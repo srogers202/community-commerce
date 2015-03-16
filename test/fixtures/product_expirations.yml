@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shop: 1
+  product: 1
+  expiration: 2015-03-06 10:21:13
+  complete: false
+
+two:
+  shop: 1
+  product: 1
+  expiration: 2015-03-06 10:21:13
+  complete: false
